@@ -3,11 +3,20 @@ import { gql } from 'apollo-server'
 export const typeDefs = gql`
   scalar DateTime
 
+  type Task {
+    id: ID!
+    title: String!
+    status: String!
+    index: Int!
+    createdAt: DateTime!
+    updatedAt: DateTime!
+  }
+
   type List {
     id: ID!
     title: String!
     index: Int!
-    tasks: [String!]
+    tasks: [Task!]
     createdAt: DateTime!
     updatedAt: DateTime!
   }
