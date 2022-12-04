@@ -5,22 +5,16 @@ export const typeDefs = gql`
     id: ID!
     title: String!
     status: String!
-    assignToUserId: String
-    taskListId: String
   }
 
   input CreateTaskInput {
     title: String!
     status: String!
-    assignToUserId: String!
-    taskListId: String!
   }
 
   input UpdateTaskInput {
     title: String
     status: String
-    assignToUserId: String
-    taskListId: String
   }
 
   type MutationResult {

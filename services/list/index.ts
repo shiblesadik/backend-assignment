@@ -11,5 +11,5 @@ export async function startServer(): Promise<void> {
 
   const { url } = await server.listen(Number(process.env.TASK_LIST_SERVICE_PORT))
 
-  console.log(`TaskList service running at ${url}`)
+  console.log(`Tas kList service running at ${url}`)
 }
