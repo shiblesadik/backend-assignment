@@ -1,0 +1,14 @@
+type User {
+  id: String!
+  username: String!
+}
+
+type Task {
+  id: String!
+  title: String!
+  status: String!
+  assignToUserId: String
+  taskListId: String
+  createdAt: Date
+  updatedAt: Date
+}
