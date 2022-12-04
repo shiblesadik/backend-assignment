@@ -5,6 +5,8 @@ export const typeDefs = gql`
     id: ID!
     title: String!
     status: String!
+    assignToUserId: String
+    taskListId: String
   }
 
   input CreateTaskInput {
