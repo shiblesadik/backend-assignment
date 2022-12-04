@@ -8,7 +8,8 @@ export const mutation: Resolvers<Context>['Mutation'] = {
     ctx.prisma.list.update({
       where: { id },
       data: {
-        title: input.title ?? undefined
+        title: input.title ?? undefined,
+        index: input.index ?? undefined
       },
     }),
 }

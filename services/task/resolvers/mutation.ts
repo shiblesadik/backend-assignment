@@ -9,7 +9,9 @@ export const mutation: Resolvers<Context>['Mutation'] = {
       where: { id },
       data: {
         title: input.title ?? undefined,
-        status: input.status ?? undefined
+        status: input.status ?? undefined,
+        listId: input.listId ?? undefined,
+        index: input.index ?? undefined
       },
     }),
 }

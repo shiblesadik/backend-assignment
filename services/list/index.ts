@@ -9,7 +9,7 @@ export async function startServer(): Promise<void> {
     resolvers,
   })
 
-  const { url } = await server.listen(Number(process.env.TASK_LIST_SERVICE_PORT))
+  const { url } = await server.listen(Number(process.env.LIST_SERVICE_PORT))
 
-  console.log(`Tas kList service running at ${url}`)
+  console.log(`List service running at ${url}`)
 }

@@ -17,13 +17,18 @@ model Task {
   id        String   @id @default(uuid())
   title     String
   status    String
+  index     Int
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  List      List?    @relation(fields: [listId], references: [id])
+  listId    String?
 }
 
 model List {
   id        String   @id @default(uuid())
   title     String
+  tasks     Task[]
+  index     Int
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }

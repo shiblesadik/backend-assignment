@@ -1,17 +1,24 @@
 import { gql } from 'apollo-server'
 
 export const typeDefs = gql`
+  scalar DateTime
+
   type List {
     id: ID!
     title: String!
+    index: Int!
+    createdAt: DateTime!
+    updatedAt: DateTime!
   }
 
   input CreateListInput {
     title: String!
+    index: Int!
   }
 
   input UpdateListInput {
     title: String
+    index: Int
   }
 
   type MutationResult {
