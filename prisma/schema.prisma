@@ -1,7 +1,6 @@
 datasource db {
-  provider     = "postgresql"
-  url          = env("DB_URL")
-  relationMode = "prisma"
+  provider = "postgresql"
+  url      = env("DB_URL")
 }
 
 generator client {
@@ -18,7 +17,6 @@ model Task {
   id        String   @id @default(uuid())
   title     String
   status    String
-  index     Int
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   List      List?    @relation(fields: [listId], references: [id])
@@ -26,10 +24,10 @@ model Task {
 }
 
 model List {
-  id        String   @id @default(uuid())
-  title     String
-  tasks     Task[]
-  index     Int
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id         String   @id @default(uuid())
+  title      String
+  tasksOrder String[] @default([])
+  tasks      Task[]
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
 }

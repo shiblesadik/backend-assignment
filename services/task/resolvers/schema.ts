@@ -8,7 +8,6 @@ export const typeDefs = gql`
     title: String!
     status: String!
     listId: String
-    index: Int!
     createdAt: DateTime!
     updatedAt: DateTime!
   }
@@ -17,14 +16,12 @@ export const typeDefs = gql`
     title: String!
     status: String!
     listId: String
-    index: Int!
   }
 
   input UpdateTaskInput {
     title: String
     status: String
     listId: String
-    index: Int
   }
 
   type MutationResult {
