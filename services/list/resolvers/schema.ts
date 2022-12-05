@@ -3,23 +3,34 @@ import { gql } from 'apollo-server'
 export const typeDefs = gql`
   scalar DateTime
 
+  type Task {
+    id: ID!
+    title: String!
+    status: String!
+    createdAt: DateTime!
+    updatedAt: DateTime!
+  }
+
   type List {
     id: ID!
     title: String!
-    index: Int!
-    tasks: [String!]
+    tasks: [Task!]
+    tasksOrder: [String!]!
     createdAt: DateTime!
     updatedAt: DateTime!
   }
 
   input CreateListInput {
     title: String!
-    index: Int!
   }
 
   input UpdateListInput {
     title: String
-    index: Int
+  }
+
+  input UpdateTasksOrderInput {
+    taskId: String!
+    index: Int!
   }
 
   type MutationResult {
@@ -34,6 +45,7 @@ export const typeDefs = gql`
   type Mutation {
     createList(input: CreateListInput!): List!
     updateList(id: ID!, input: UpdateListInput!): List
+    updateTasksOrder(id: ID!, input: UpdateTasksOrderInput!): List
     deleteList(id: ID!): MutationResult!
   }
 `
