@@ -14,7 +14,6 @@ export const typeDefs = gql`
 
   input CreateTaskInput {
     title: String!
-    status: String!
     listId: String!
   }
 
@@ -43,6 +42,5 @@ export const typeDefs = gql`
     createTask(input: CreateTaskInput!): Task!
     updateTask(id: ID!, input: UpdateTaskInput!): Task
     changeTaskList(id: ID!, input: ChangeTaskListInput!): Task
-    deleteTask(id: ID!): MutationResult!
   }
 `
