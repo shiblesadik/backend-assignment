@@ -7,7 +7,6 @@ export const typeDefs = gql`
     id: ID!
     title: String!
     status: String!
-    tasksOrder: [String!]!
     createdAt: DateTime!
     updatedAt: DateTime!
   }

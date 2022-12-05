@@ -16,10 +16,10 @@ export const mutation: Resolvers<Context>['Mutation'] = {
       where: { id },
     });
     const tasksOrder = prevList?.tasksOrder;
-    const index = tasksOrder.findIndex(id => id == input.taskId);
-    if (index > -1) {
-      tasksOrder.splice(index, 1);
-      tasksOrder.splice(input.index, 0, input.taskId);
+    const index = tasksOrder?.findIndex(id => id == input.taskId);
+    if (index && index > -1) {
+      tasksOrder?.splice(index, 1);
+      tasksOrder?.splice(input.index, 0, input.taskId);
     }
 
     return ctx.prisma.list.update({
