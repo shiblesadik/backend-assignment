@@ -46,6 +46,5 @@ export const typeDefs = gql`
     createList(input: CreateListInput!): List!
     updateList(id: ID!, input: UpdateListInput!): List
     updateTasksOrder(id: ID!, input: UpdateTasksOrderInput!): List
-    deleteList(id: ID!): MutationResult!
   }
 `
